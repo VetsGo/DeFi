@@ -1,4 +1,5 @@
-﻿using Nethereum.Web3;
+﻿using Nethereum.Signer;
+using Nethereum.Web3;
 using Nethereum.Web3.Accounts;
 
 namespace RidkovetsLab1;
@@ -7,6 +8,25 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        //--------Wallet generator--------
+        /*string targetPrefix = "0x10"; // Число дня народження: 10
+
+        EthECKey ecKey;
+        string address;
+        int attempts = 0;
+
+        do
+        {
+            attempts++;
+            ecKey = EthECKey.GenerateKey();
+            address = ecKey.GetPublicAddress();
+        } 
+        while (!address.StartsWith(targetPrefix, StringComparison.OrdinalIgnoreCase));
+
+        Console.WriteLine($"\nWallet found after {attempts} attempts!");
+        Console.WriteLine($"Public address: {address}");
+        Console.WriteLine($"Private key:  {ecKey.GetPrivateKey()}");*/
+        
         string rpcUrl = "https://eth-sepolia.g.alchemy.com/v2/alch_ohPjfg0J-A371o42lIuj8";
 
         // Приватний ключ ПЕРШОГО гаманця
