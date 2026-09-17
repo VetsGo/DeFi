@@ -20,8 +20,8 @@ class Program
         } 
         while (!address.StartsWith(targetPrefix, StringComparison.OrdinalIgnoreCase));
 
-        Console.WriteLine($"\nЗнайдено гаманець після {attempts} спроб!");
-        Console.WriteLine($"Публічна адреса: {address}");
-        Console.WriteLine($"Приватний ключ:  0x{ecKey.GetPrivateKey()}");
+        Console.WriteLine($"\nWallet generated after {attempts} attempts!");
+        Console.WriteLine($"Public address: {address}");
+        Console.WriteLine($"Private key:  0x{ecKey.GetPrivateKey()}");
     }
 }
