@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ethers } from 'ethers';
+import './App.css';
 
 function App() {
   const [account, setAccount] = useState(null);
@@ -23,25 +24,29 @@ function App() {
 
   const fetchHistory = async (walletAddress) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/swaps?trader=${walletAddress}`);
+      const response = await fetch(`http://localhost:5158/api/swaps?trader=${walletAddress}`);
       const data = await response.json();
       setHistory(data);
     } catch (error) {
-      Console.error("Error loading history:", error);
+      console.error("Error loading history:", error);
     }
   };
 
   return (
-      <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+      <div className="app-container">
         <h1>RidkovetsLab3 - DeFi Pool</h1>
+
         {!account ? (
-            <button onClick={connectWallet} style={{ padding: '10px 20px' }}>Connect MetaMask</button>
+            <button onClick={connectWallet} className="btn-connect">
+              Connect MetaMask
+            </button>
         ) : (
             <p><strong>Connected:</strong> {account}</p>
         )}
 
         <h2>Exchange History</h2>
-        <table border="1" cellPadding="8" style={{ borderCollapse: 'collapse', width: '100%' }}>
+
+        <table className="swap-table">
           <thead>
           <tr>
             <th>Tx Hash</th>
@@ -59,7 +64,9 @@ function App() {
                   </tr>
               ))
           ) : (
-              <tr><td colSpan="3">No records found</td></tr>
+              <tr>
+                <td colSpan="3" className="empty-row">No records found</td>
+              </tr>
           )}
           </tbody>
         </table>
