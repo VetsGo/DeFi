@@ -16,6 +16,8 @@ class Program
     {
         var account = new Account(PrivateKey);
         var web3 = new Web3(account, RpcUrl);
+        
+        web3.Eth.TransactionManager.UseLegacyAsDefault = true;
 
         Console.WriteLine($"User: {account.Address}");
 
