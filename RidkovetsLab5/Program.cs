@@ -7,7 +7,7 @@ namespace RidkovetsLab5;
 
 class Program
 {
-    private const string RpcUrl = "https://eth-sepolia.g.alchemy.com/v2/alch_ohPjfg0J-A371o42lIuj8";
+    private const string RpcUrl = "http://127.0.0.1:8545";
     private const string PrivateKey = "0x133941029bc3d748514a0b44d441816275ddf573fdd734962c48b5586ec07146";
 
     private const string StableEngineAddress = "0xe0861bF53521e727Cb232f68cCe9D75590C25C70";
